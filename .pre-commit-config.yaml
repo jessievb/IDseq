@@ -1,0 +1,12 @@
+- repo: https://github.com/sanmai-NL/pre-commit-hooks_R.git
+  sha: 2baf7785e448cc4e06b2066c7d75219da260eac2
+  hooks:
+    - id: lintr
+- repo: https://github.com/pre-commit/pre-commit-hooks.git
+  sha: 144c3857cdbba0b758f80aeee9f2adf42ea303ee
+  hooks:
+  - id: trailing-whitespace
+    args:
+     - --no-markdown-linebreak-ext
+    files: \.(c|cpp|R|yaml|yml)$
+  - id: end-of-file-fixer

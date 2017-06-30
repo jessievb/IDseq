@@ -1,0 +1,36 @@
+Package:IDseq
+Type: Package
+Title: Split barcoded FASTQ files and analyse data from the IDseq method
+Version: 0.1.0
+Date: 2016-06-02
+Authors@R: person("Jessie", "Van Buggenum", email="jessievanbuggenum@gmail.com",
+                  role = c("aut", "cre"))
+Maintainer: Jessie Van Buggenum <jessievanbuggenum@gmail.com>
+Description: Immuno-Detection by sequencingq (ID-seq) method combines specific protein detection
+    via antibodies with sequencing antibody-specific DNA barcodes. This package
+    allows the processing of FASTQ files that were generated after performing
+    ID-seq experiments and provides functions to match and count barcodes.
+License: GPL-3
+LazyData: true
+Depends:
+    R (< 4.0.0),
+    R (>= 3.2.0),
+    data.table (>= 1.9.6),
+    dplyr (>= 0.4.3),
+    tools (>= 3.2.0),
+    futile.logger (>= 1.4.1),
+    ggplot2 (>= 2.0.0),
+    methods
+Imports:
+    dplyr (>= 0.4.3),
+    ShortRead (>= 1.26.0),
+    stringr (>= 1.0.0),
+    data.table (>= 1.9.6),
+    foreach (>= 1.4.3),
+    doParallel (>= 1.0.10),
+    doSNOW (>= 1.0.14),
+    futile.logger (>= 1.4.1),
+    tools (>= 3.2.0),
+    ggplot2 (>= 2.0.0)
+RoxygenNote: 5.0.1
+biocViews: @BIOCVIEWS@
