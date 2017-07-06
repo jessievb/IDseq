@@ -16,7 +16,7 @@ The package allows to:
 
 ## Quick and easy install directly from GitHub
 
-The 'devtools' package allows installing the iSeq package from GitHub directly.
+The 'devtools' package allows installing the IDseq package from GitHub directly.
 
 ```r 
 # First start R and install and load the devtools package
@@ -45,21 +45,21 @@ library(IDseq)
 # move into the folder with R packages (any folder you like)
 cd ~/my-R-packages/
 
-# download the iSeq package using git
+# download the IDseq package using git
 git clone git@github.com:jessievb/IDseq.git
 ```
 
 
-#### Install/deploy i-Seq package in R
+#### Install/deploy IDseq package in R
 
 'Devtools' package also allows you to install a package from a local folder. Extra information on devtools package you can find [here](devtoolsinfo).
 
 - Start R 
 - Make sure working directory = the package directory   
-- Run documentation and installation of the iSeq package (only once needed)  
+- Run documentation and installation of the IDseq package (only once needed)  
 
 ```
-setwd(~/my-R-packages/iSeq/) # Make sure working directory = folder with R-package
+setwd(~/my-R-packages/IDseq/) # Make sure working directory = folder with R-package
 devtools::document() # to create documentation
 devtools::install() # install package
 ```
@@ -119,7 +119,7 @@ Start any number of processes, depending on the number of fastq.gz files to proc
 find Path_to_folders_with_fastqfiles/*/sample_name*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- echo "'{}'"
 
 # copy command until -i , and then start R by using -- R -e
-find Path_to_folders_with_fastqfiles/*/sample_name*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- R -e 'library(IDseq); setwd("~/Experiment_ID"); system.time(iseq_split_reads(fastq_file="'{}'")); quit(save="no")'
+find Path_to_folders_with_fastqfiles/*/sample_name*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- R -e 'library(IDseq); setwd("~/Experiment_ID"); system.time(IDseq_split_reads(fastq_file="'{}'")); quit(save="no")'
 ```
 
 ## 3. Create .tsv files with antibody and sample index information
