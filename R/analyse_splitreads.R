@@ -1,5 +1,5 @@
 #' @export
-IDseq_analysis_splitreads <- function(experiment_dir) {
+IDseq_analysis_splitreads <- function(experiment_dir, split_reads_table = "output/data/IDseq_split_reads.tsv") {
   ## First set working directory to experiment folder
   setwd(experiment_dir)
 
@@ -20,7 +20,7 @@ IDseq_analysis_splitreads <- function(experiment_dir) {
       "Import reads from experiment: %s", experiment_dir, name = "2")
 
   ## Import the total split
-  IDseq_split_reads <- IDseq_import_split_data("output/data/IDseq_split_reads.tsv")
+  IDseq_split_reads <- IDseq_import_split_data(split_reads_table)
 
   ## Log info
   split_reads_total <- nrow(IDseq_split_reads)
