@@ -89,7 +89,7 @@ This functions combines the following functions in order:
  1. IDseq_import_split_data()
  2. IDseq_umi_count()
  3. IDseq_umi_count_frequency()
- 4. IDseq_barcode_count()
+ 4. IDseq_barcode_count()  
 Also, it adds run and experiment information to the .log files in the output/exp_log/ folder. Finally it creates a bar and dotplot with the count distribution and UMI-duplicate rates in the output/figures/ folder
 
 # Example workflow
