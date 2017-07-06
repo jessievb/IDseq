@@ -116,10 +116,10 @@ Start any number of processes, depending on the number of fastq.gz files to proc
 
 ```sh
 # check if the command works. Should print all FASTQ filenames found in the indicated. Indicate behind -P how many cores should be used.
-find Path_to_folders_with_fastqfiles/*/lane1_JvBV75-*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- echo "'{}'"
+find Path_to_folders_with_fastqfiles/*/sample_name*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- echo "'{}'"
 
 # copy command until -i , and then start R by using -- R -e
-find Path_to_folders_with_fastqfiles/*/lane1_JvBV75-*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- R -e 'library(IDseq); setwd("~/Experiment_ID"); system.time(iseq_split_reads(fastq_file="'{}'")); quit(save="no")'
+find Path_to_folders_with_fastqfiles/*/sample_name*__R1_0*.fastq.gz -name "*.fastq.gz" | xargs -P 4 -i -- R -e 'library(IDseq); setwd("~/Experiment_ID"); system.time(iseq_split_reads(fastq_file="'{}'")); quit(save="no")'
 ```
 
 ## 3. Create .tsv files with antibody and sample index information
