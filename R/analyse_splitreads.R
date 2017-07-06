@@ -52,17 +52,18 @@ IDseq_analysis_splitreads <- function(experiment_dir, split_reads_table = "outpu
   ## Create plot of barcode counts (which shows the distribution of
   ## counts)
   ggplot2::ggplot(data = barcode_count, aes(antibody_count)) +
-      ggplot2::geom_histogram(binwidth = 10)  # +
-  # xlim(0, 800) + ylim(0,10000)
-
-  ggplot2::ggsave(
+      ggplot2::geom_histogram(binwidth = 0.1)   +
+      ggplot2::xlab("Antibody count") + ggplot2::ylab("frequency") +
+      ggplot2::scale_x_log10() +
+      ggplot2::scale_y_log10() + ggplot2::theme_bw()
+    ggplot2::ggsave(
       "output/figures/barcode_count_histogram.eps", width = 5, height = 5)
  
   ## create plot of the UMI distribution
   ggplot2::ggplot(data = UMI_count_frequency,
                   aes(x = row_occurence_count, y = count_frequency)) +
       ggplot2::geom_point() +
-      ggplot2::xlab("UMI occurence") + ggplot2::ylab("frequency") +
+      ggplot2::xlab("UMI occurance") + ggplot2::ylab("frequency") +
       ggplot2::scale_y_log10() + ggplot2::theme_bw()
   ggplot2::ggsave("output/figures/UMI_frequency.eps", width = 5, height = 5)
   
