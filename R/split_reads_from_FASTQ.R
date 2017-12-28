@@ -65,7 +65,7 @@ IDseq_split_reads <- function(fastq_file, matching_distance = 2) {
   approximate_matches_index <- utils::aregexec(
       REGULAR_EXPRESSION_PATTERN, reads[row_index_for_aregexec],
       max.distance = matching_distance)
-
+  futile.logger::flog.info("Matching distance: '%s' ...", matching_distance, name = "2")
   ## Creates a matrix with 5 columns | Read | UMI | Barcode_1 | anchor |
   ## Barcode_2 | of all 'approximated matches' via `regmatches())` that
   ## only uses the reads not having 100% match
